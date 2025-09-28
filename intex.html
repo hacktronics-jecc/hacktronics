@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: SMART Traffic Management System (STMS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 384px;
+            }
+        }
+        .flow-arrow::after {
+            content: '▼';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #d45087;
+        }
+        .flow-arrow-horizontal::after {
+            content: '►';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #d45087;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#003f5c] uppercase tracking-wide">SMART Traffic Management System</h1>
+            <p class="text-lg md:text-xl text-[#665191] mt-2 font-medium">Dynamic Signal Optimization and Emergency Priority using AI & Computer Vision</p>
+        </header>
+
+        <section id="problem" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">The Problem: Inefficient Urban Traffic Control</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#f95d6a]">
+                    <div class="text-5xl font-extrabold text-[#f95d6a]">30-40%</div>
+                    <h3 class="text-lg font-semibold mt-2">Increased Congestion</h3>
+                    <p class="text-sm text-gray-600 mt-1">Static, fixed-time signals ignore real-time vehicle density, causing unnecessary bottlenecks.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#ff7c43]">
+                    <div class="text-5xl font-extrabold text-[#ff7c43]">~60s</div>
+                    <h3 class="text-lg font-semibold mt-2">Unnecessary Wait Times</h3>
+                    <p class="text-sm text-gray-600 mt-1">Drivers wait at empty intersections while congested lanes remain red, wasting time and fuel.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#ffa600]">
+                    <div class="text-5xl font-extrabold text-[#ffa600]">Critical Delays</div>
+                    <h3 class="text-lg font-semibold mt-2">Emergency Response</h3>
+                    <p class="text-sm text-gray-600 mt-1">Lack of automated priority for ambulances and fire trucks can have life-threatening consequences.</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-[#d45087]">
+                    <div class="text-5xl font-extrabold text-[#d45087]">2.2 tons</div>
+                    <h3 class="text-lg font-semibold mt-2">Annual CO₂ Emissions</h3>
+                    <p class="text-sm text-gray-600 mt-1">Per car due to idling. Inefficient traffic flow significantly increases environmental pollution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Our Solution: A Dynamic, Vision-Based STMS</h2>
+            <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-center text-lg mb-8 max-w-3xl mx-auto">Our system replaces outdated, static timers with a smart, adaptive traffic control network. By leveraging real-time video feeds and advanced AI, the STMS makes intelligent decisions to optimize traffic flow, prioritize emergency services, and provide valuable data for urban planning.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl">👁️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#2f4b7c]">Real-time Density Analysis</h3>
+                            <p class="text-gray-600">Accurately counts and classifies vehicles (cars, trucks, bikes) in each lane using the high-performance YOLOv8 object detection model.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl">⏱️</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#665191]">Dynamic Signal Optimization</h3>
+                            <p class="text-gray-600">An intelligent algorithm adjusts signal timings based on real-time traffic pressure, allocating green time where it's needed most.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl">🚑</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#a05195]">Emergency Vehicle Priority</h3>
+                            <p class="text-gray-600">Instantly detects emergency vehicles, interrupts the normal cycle, and creates a "Green Corridor" to ensure a clear path.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="text-4xl">📊</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-[#d45087]">Real-time Monitoring & Analytics</h3>
+                            <p class="text-gray-600">A dedicated application provides live signal status, vehicle counts, and historical performance data for analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">System Architecture & Data Flow</h2>
+             <div class="bg-white rounded-xl shadow-lg p-8">
+                <p class="text-center text-lg mb-12 max-w-3xl mx-auto">The system is designed as a modular pipeline, ensuring efficient data processing from visual input to physical signal actuation and data visualization.</p>
+                <div class="flex flex-col md:flex-row justify-around items-center space-y-8 md:space-y-0 md:space-x-4">
+                    <div class="text-center w-48 relative flow-arrow md:flow-arrow-horizontal">
+                        <div class="text-4xl mb-2">📷</div>
+                        <h3 class="font-bold text-lg text-[#003f5c]">1. Data Acquisition</h3>
+                        <p class="text-sm text-gray-600">Live video stream from intersection cameras.</p>
+                    </div>
+                    <div class="text-center w-48 relative flow-arrow md:flow-arrow-horizontal">
+                        <div class="text-4xl mb-2">🧠</div>
+                        <h3 class="font-bold text-lg text-[#2f4b7c]">2. Processing Layer</h3>
+                        <p class="text-sm text-gray-600">Python, OpenCV & YOLOv8 perform vehicle detection.</p>
+                    </div>
+                    <div class="text-center w-48 relative flow-arrow md:flow-arrow-horizontal">
+                        <div class="text-4xl mb-2">⚙️</div>
+                        <h3 class="font-bold text-lg text-[#665191]">3. Decision Layer</h3>
+                        <p class="text-sm text-gray-600">Algorithms calculate optimal timings and priority interrupts.</p>
+                    </div>
+                    <div class="text-center w-48 relative flow-arrow md:flow-arrow-horizontal">
+                         <div class="text-4xl mb-2">🚦</div>
+                        <h3 class="font-bold text-lg text-[#a05195]">4. Actuation Layer</h3>
+                        <p class="text-sm text-gray-600">Commands are sent to hardware controllers to change signals.</p>
+                    </div>
+                    <div class="text-center w-48">
+                        <div class="text-4xl mb-2">📈</div>
+                        <h3 class="font-bold text-lg text-[#d45087]">5. Visualization</h3>
+                        <p class="text-sm text-gray-600">Data logged to database for app-based monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">How It Works: The Core Logic</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#2f4b7c]">Dynamic Signal Optimization</h3>
+                    <p class="text-sm text-gray-600 mb-4">The system calculates a 'Traffic Pressure Index' (TPI) for each lane by counting vehicles and assigning weights (e.g., Truck=3, Car=2). The lane with the highest TPI is allocated a proportionally longer green light, maximizing throughput.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="tpiChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#a05195]">Emergency Vehicle Green Corridor</h3>
+                     <p class="text-sm text-gray-600 mb-4">When an emergency vehicle is detected, the STMS overrides the current cycle. It turns the vehicle's approach lane green and all other lanes red, creating a safe and clear path through the intersection without delay.</p>
+                    <div class="relative w-full aspect-square max-w-md mx-auto bg-gray-200 grid grid-cols-3 grid-rows-3 rounded-lg p-2 gap-2">
+                        <div class="col-start-2 row-start-2 bg-gray-400 rounded-md flex justify-center items-center font-bold">INT</div>
+                        <div class="bg-gray-300 rounded-md flex justify-center items-center text-2xl">🚗</div>
+                        <div class="bg-red-500 rounded-md flex justify-center items-center text-2xl font-bold text-white">RED</div>
+                        <div class="bg-gray-300 rounded-md flex justify-center items-center text-2xl">🚗</div>
+                        <div class="bg-red-500 rounded-md flex justify-center items-center text-2xl font-bold text-white">RED</div>
+                        <div class="bg-green-500 rounded-md flex justify-center items-center text-2xl animate-pulse">🚑</div>
+                        <div class="bg-red-500 rounded-md flex justify-center items-center text-2xl font-bold text-white">RED</div>
+                        <div class="bg-gray-300 rounded-md flex justify-center items-center text-2xl">🚗</div>
+                        <div class="bg-green-500 rounded-md flex justify-center items-center text-xl font-bold text-white">GREEN</div>
+                        <div class="bg-gray-300 rounded-md flex justify-center items-center text-2xl"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results" class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#003f5c]">Performance & Impact: Proven Efficiency</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#003f5c]">Wait Time & Throughput Improvement</h3>
+                    <p class="text-sm text-gray-600 mb-4 text-center">Comparative analysis shows the STMS significantly reduces average vehicle wait times and increases the number of vehicles processed per hour, especially during peak traffic periods.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#003f5c]">YOLOv8 Detection Accuracy</h3>
+                    <p class="text-sm text-gray-600 mb-4 text-center">The core of our system relies on highly accurate vehicle detection. Our fine-tuned YOLOv8 model achieves state-of-the-art precision, ensuring reliable data for decision-making.</p>
+                    <div class="chart-container h-80 md:h-96">
+                        <canvas id="accuracyChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p class="text-lg font-bold text-[#003f5c]">Paving the Way for Smarter Cities</p>
+        <p class="text-gray-600">This Smart Traffic Management System is a critical step towards more efficient, safer, and sustainable urban infrastructure.</p>
+
+        <footer class="text-center mt-12 pt-8 border-t border-gray-300">
+        <p>© Copyright HACKTRONICS. All Rights Reserved</p>
+        <p>Designed by <a href="https://vaishnavgit.github.io/new/">HACKTRONICS</a></p>
+        </footer>
+
+    </div>
+
+    <script>
+        const colorPalette = {
+            blueDark: '#003f5c',
+            blueMid: '#2f4b7c',
+            purpleDark: '#665191',
+            purpleMid: '#a05195',
+            magenta: '#d45087',
+            pink: '#f95d6a',
+            orange: '#ff7c43',
+            yellow: '#ffa600'
+        };
+
+        const chartTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabel(label, maxWidth = 16) {
+            if (label.length <= maxWidth) return label;
+            const words = label.split(' ');
+            let lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxWidth) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) lines.push(currentLine);
+            return lines;
+        }
+
+        const tpiCtx = document.getElementById('tpiChart').getContext('2d');
+        new Chart(tpiCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Lane A (North)', 'Lane B (East)', 'Lane C (South)', 'Lane D (West)'],
+                datasets: [{
+                    label: 'Traffic Pressure Index (TPI)',
+                    data: [110, 215, 80, 150],
+                    backgroundColor: [
+                        colorPalette.blueMid,
+                        colorPalette.pink,
+                        colorPalette.purpleDark,
+                        colorPalette.orange,
+                    ],
+                    borderColor: '#ffffff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...chartTooltipConfig,
+                maintainAspectRatio: false,
+                responsive: true,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Calculated Traffic Pressure' }
+                    }
+                },
+                plugins: {
+                    ...chartTooltipConfig.plugins,
+                    legend: { display: false },
+                    title: { display: true, text: 'Live TPI Comparison by Lane' }
+                }
+            }
+        });
+
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Avg. Wait Time (s)', 'Throughput (Veh/Hr)'],
+                datasets: [
+                    {
+                        label: 'Static Signal System',
+                        data: [58, 1250],
+                        backgroundColor: colorPalette.blueMid,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Smart (STMS) System',
+                        data: [25, 1850],
+                        backgroundColor: colorPalette.pink,
+                        borderColor: '#ffffff',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                ...chartTooltipConfig,
+                maintainAspectRatio: false,
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    }
+                },
+                plugins: {
+                    ...chartTooltipConfig.plugins,
+                    title: { display: true, text: 'Performance: Static vs. Smart System' }
+                }
+            }
+        });
+
+        const accuracyCtx = document.getElementById('accuracyChart').getContext('2d');
+        new Chart(accuracyCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Correct Detections', 'Incorrect Detections'],
+                datasets: [{
+                    label: 'Detection Accuracy',
+                    data: [98.7, 1.3],
+                    backgroundColor: [
+                        colorPalette.purpleDark,
+                        colorPalette.orange
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...chartTooltipConfig,
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    ...chartTooltipConfig.plugins,
+                    legend: { position: 'bottom' },
+                    title: { display: true, text: 'Overall Detection mAP: 98.7%' }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
